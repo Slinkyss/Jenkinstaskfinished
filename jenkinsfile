@@ -1,0 +1,56 @@
+pipeline {
+     agent any
+     stages {
+         stage('Build') {
+             steps {
+                 sh 'echo "Building..."'
+             }
+         }      
+         stage('Upload to AWS') {
+              steps {
+                  script {
+             def USER_INPUT = input(
+                    message: 'Upload to S3 Bucket?',
+                    parameters: [
+                            [$class: 'ChoiceParameterDefinition',
+                             choices: ['revert','upload'].join('\n'),
+                             name: 'input',
+                             description: 'Menu - select box option']
+                    ])
+
+            echo "The answer is: ${USER_INPUT}"
+
+            if( "${USER_INPUT}" == "upload"){
+                withAWS(region:'eu-west-1',credentials:'awsid') {
+                  sh 'echo "Uploading content with AWS creds"'
+                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'first-stack.yaml', bucket:'jenkinsslinkisbucket')
+                      sh'''
+                      aws cloudformation update-stack --stack-name jenkinstask --template-url https://jenkinsslinkisbucket.s3.eu-west-1.amazonaws.com/first-stack.yaml 
+                      '''
+                 stage('Sucess') {
+            
+         }      
+                  }
+            } else {
+                stage('Reverting') {
+                withCredentials([gitUsernamePassword(credentialsId: 'githubpassword', gitToolName: 'Default')]) {
+                sh '''
+            git checkout main
+            git pull origin main
+            git checkout -b trashtest
+            git revert -m 1 HEAD  
+            git checkout main
+            git merge trashtest
+            git push origin main
+            git branch -D trashtest
+
+                '''
+                stage('Sucess') {} 
+                }
+            }
+            }
+        }
+    }
+    }
+}
+}

@@ -1,0 +1,124 @@
+---
+AWSTemplateFormatVersion: "2010-09-09"
+
+Description: CF template to create the first security group
+
+Parameters:
+  OwnerName:
+    Type: String
+    Default: Slinkiss
+    Description: Slinkiss
+
+  InstanceTypeParameter:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+    Description: <
+      Enter t2.micro
+
+Resources:
+  Secondgroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: The first security group
+      GroupName: !Sub "${OwnerName}-sg"
+      SecurityGroupEgress:
+        - IpProtocol: tcp
+          FromPort: 0
+          ToPort: 65535
+          CidrIp: 0.0.0.0/0
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+          Description: Allows SSH from anywhere
+        - IpProtocol: tcp
+          FromPort: 8080
+          ToPort: 8080
+          CidrIp: 0.0.0.0/0
+          Description: Allows to access Jenkins from anywhere
+      VpcId: vpc-09624d15538bfe449
+
+
+
+      Tags:
+        - Key: "CreatedBy"
+          Value:
+            Ref: OwnerName
+
+  FirstEC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      IamInstanceProfile: CLOUDTEST
+      ImageId: "ami-0db188056a6ff81ae"
+      KeyName: student
+      InstanceType:
+        Ref: InstanceTypeParameter
+      NetworkInterfaces:
+        - AssociatePublicIpAddress: true
+          DeleteOnTermination: true
+          DeviceIndex: "0"
+          GroupSet:
+            - Ref: Secondgroup
+          SubnetId: "subnet-031c427dc462ec142"
+      Tags:
+        - Key: "CreatedBy"
+          Value:
+            Ref: OwnerName
+        - Key: "Name"
+          Value: !Sub "${OwnerName}-cf-instance"
+      UserData:
+        Fn::Base64:
+          !Sub |
+            #!/bin/bash -xe
+            sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+            sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+            sudo yum upgrade -y
+            sudo amazon-linux-extras install epel java-openjdk11 -y
+            sudo yum install -y jenkins
+            sudo systemctl daemon-reload
+            cd /
+            cd /var/lib/jenkins
+            sudo mkdir init.groovy.d
+            cd init.groovy.d
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/Dockerfile .
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/jenkins-plugins .
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/default.user.groovy .
+            sudo yum install -y docker
+            sudo systemctl start docker
+            sudo docker build -t slinkis/jenkins .
+            docker run -d --name jenkins-server -p 8080:8080 slinkis/jenkins
+            cd /var/
+            sudo mkdir jobs
+            cd jobs
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/jobs/ . --recursive
+            cd ..
+            sudo chmod -R 777 /var/jobs/
+            sudo mkdir secrets
+            cd secrets
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/secrets/ . --recursive
+            cd ..
+            sudo chmod -R 777 /var/secrets/
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/credentials.xml .
+            sudo chmod -R 777 credentials.xml
+            sudo aws s3 cp s3://slinkis-bucket-jenkins/secret.key .
+            sudo chmod -R 777 secret.key
+            sudo docker cp /var/secret.key jenkins-server:/var/jenkins_home/
+            sudo docker cp /var/secrets jenkins-server:/var/jenkins_home/
+            sudo docker cp /var/jobs jenkins-server:/var/jenkins_home/
+            sudo docker cp /var/credentials.xml jenkins-server:/var/jenkins_home/
+            sudo docker exec jenkins-server git config --global user.email "daniel284222@gmail.com"
+            sudo docker exec jenkins-server git config --global user.name "Slinkyss"
+            sudo docker container restart jenkins-server
+
+
+
+
+
+
+
+
+
+
