@@ -1,0 +1,10 @@
+commit daa5e711150edba58ac907532c731cca26c971aa
+tree 6f3b7fb61c145586c1be12d1177b46fe94a248cd
+parent 088ccffe172fc978c51a859b91c477b7c74d18d4
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-10 12:44:48 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-10 12:44:48 +0300
+
+    final test
+
+
+:100644 100644 50da05cc50dfb682db590371b967e398a6b3e39d 231d1007c80ca7759d2e8b0ff12d7f1af5232d5c M	test.txt

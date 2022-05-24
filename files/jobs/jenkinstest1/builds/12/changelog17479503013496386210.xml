@@ -1,0 +1,120 @@
+commit 955522b78b98c0598fa9f48d378009f8252b857c
+tree 02f9d888f7edebd848d4a1cc89919515225a8550
+parent a8cc15702c262efa5ccaf09efadf02f11f701a25
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-16 10:31:51 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-16 10:31:51 +0300
+
+    final test11
+
+
+:100644 100644 c9ed095aec7a59fb91f3de1f350c0ed181766398 d5dc48a29bd16833b0d15019deec7e11c55099b8 M	test.txt
+commit a8cc15702c262efa5ccaf09efadf02f11f701a25
+tree 0bbed1ac92c13dd3d5f058dddfe7567dad038b8a
+parent e937c7194cb88ac6eedfc4d95a2fecefa0aa6e15
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-16 10:27:43 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-16 10:27:43 +0300
+
+    added stack file
+
+
+:100644 100644 ffd822ce176593eb3defad893023bb47138c759d dba4e2b5925de2bdc5fc3781df652a82a240ce37 M	first-stack.yaml
+commit e937c7194cb88ac6eedfc4d95a2fecefa0aa6e15
+tree af1f194a82d55712b0c437284a23d91250f8e827
+parent f5bf39eabc42eed552036195f3fa39b14fc37676
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 16:08:42 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 16:08:42 +0300
+
+    fixed jenkinsfile
+
+
+:100644 100644 91cb6d537db595eb0e6a24a2586a8ffc58ae1b00 588058ead7bfff730cd6320be0615d7c3d59fb12 M	jenkinsfile
+commit f5bf39eabc42eed552036195f3fa39b14fc37676
+tree 74609f60495e01d2d781caba3ead8c2906253259
+parent e974db3345f4f543b9bf915c37dc3db29a128fca
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:59:10 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:59:10 +0300
+
+    123
+
+
+:100644 100644 f1a5db6add3f1164738ff178bc6db1050f15111d c9ed095aec7a59fb91f3de1f350c0ed181766398 M	test.txt
+commit e974db3345f4f543b9bf915c37dc3db29a128fca
+tree 144daca4f8aa4f5737e47b7f8fc3f82a7f7991c7
+parent 7ee6cab7587aec5316fa8233c3c76eb11ebe1a06
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:56:29 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:56:29 +0300
+
+    viens divi
+
+
+:100644 100644 f30b375a10d32afb19ec09f2951bbbcd1da69dea 91cb6d537db595eb0e6a24a2586a8ffc58ae1b00 M	jenkinsfile
+commit 7ee6cab7587aec5316fa8233c3c76eb11ebe1a06
+tree 596afddb576205eb29cdb0b675a0de9944c055a4
+parent 4c239a3c2a5c496eafc1f7714d36a42f837b060b
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:55:30 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:55:30 +0300
+
+    testfinal
+
+
+:100644 100644 8fbb92f518a1201cd1931d104abd491884fae731 f1a5db6add3f1164738ff178bc6db1050f15111d M	test.txt
+commit 4c239a3c2a5c496eafc1f7714d36a42f837b060b
+tree e4cece03cf246933cb413c5af83ed8318a89595e
+parent 203cacc8dec3697c2cfafebe9dc6ceb24df7ddca
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:29:35 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:29:35 +0300
+
+    final test
+
+
+:100644 100644 3a65a6eef86855d019a473211611a4c393b19a5b 8fbb92f518a1201cd1931d104abd491884fae731 M	test.txt
+commit 203cacc8dec3697c2cfafebe9dc6ceb24df7ddca
+tree c4c3818900e027020c43e2dcc55ca3efe92d5c1b
+parent c8d72c1129e33d09fcde4cdfad5f7070eba65a3f
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:28:36 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:28:36 +0300
+
+    viens divi
+
+
+:100644 100644 cccdbc19537bf1d86f719caa045407878bf52b2a f30b375a10d32afb19ec09f2951bbbcd1da69dea M	jenkinsfile
+commit c8d72c1129e33d09fcde4cdfad5f7070eba65a3f
+tree 42ba74cdcbec498f52c3c5ff97be024dcfbab8c2
+parent 6d188b9f1540efdf1253f87f7bf6cc1819bc0dec
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:25:47 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:25:47 +0300
+
+    revert test
+
+
+:100644 100644 9ef140ac885f4dea8635a5fe3fee7b8d6919250c 3a65a6eef86855d019a473211611a4c393b19a5b M	test.txt
+commit 6d188b9f1540efdf1253f87f7bf6cc1819bc0dec
+tree 1e287990929286b5806edb399bca78f0f4e78728
+parent 5eb937c968ee0a3ede81f246ea6a2ac45e111a4e
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:24:39 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:24:39 +0300
+
+    viens
+
+
+:100644 100644 9347ed157702c1eea4a1eeb3c46398ef67633fbb cccdbc19537bf1d86f719caa045407878bf52b2a M	jenkinsfile
+commit 5eb937c968ee0a3ede81f246ea6a2ac45e111a4e
+tree aec84192612cdac0893186f97944968aeeb665f2
+parent 089bae5244c33fe2906f98131bdf7f338eaede46
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:22:13 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:22:13 +0300
+
+    test 2
+
+
+:100644 100644 59e45f7ce6c2298b2c6164e21ada31d4904a1d7a 9ef140ac885f4dea8635a5fe3fee7b8d6919250c M	test.txt
+commit 089bae5244c33fe2906f98131bdf7f338eaede46
+tree 7c6e4377330cbb094f73448686562e4d679a86fd
+parent daa5e711150edba58ac907532c731cca26c971aa
+author Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:20:22 +0300
+committer Slinkyss <52649333+Slinkyss@users.noreply.github.com> 2022-05-13 15:20:22 +0300
+
+    test100
+
+
+:100644 100644 231d1007c80ca7759d2e8b0ff12d7f1af5232d5c 59e45f7ce6c2298b2c6164e21ada31d4904a1d7a M	test.txt
